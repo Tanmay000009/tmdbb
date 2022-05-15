@@ -7,6 +7,8 @@ db();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+app.use(express.urlencoded());
 dotenv.config({ path: "config.env" });
 
 // View Engine

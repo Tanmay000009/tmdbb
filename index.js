@@ -1,12 +1,14 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const app = express();
-const db = require("./server/config/mongoose");
+const db = require("./config/mongoose");
+var cors = require("cors");
 // Connect db
 db();
 
 const PORT = process.env.PORT || 5000;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 dotenv.config({ path: "config.env" });
@@ -15,7 +17,7 @@ dotenv.config({ path: "config.env" });
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.use("/", require("./server/routes/home.routes"));
+app.use("/", require("./routes/home.routes"));
 
 app.listen(PORT, (err) => {
   if (err) {

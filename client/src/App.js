@@ -36,8 +36,22 @@ function App() {
   };
   return (
     <div>
+      <div className="pl-8 text-xl mb-16">
+        <ul class="flex">
+          <li class="mr-6">
+            <a class="text-blue-500 hover:text-blue-800" href="/">
+              TMDB
+            </a>
+          </li>
+          <li class="mr-6">
+            <a class="text-blue-500 hover:text-blue-800" href="/movies/add">
+              Add a movie
+            </a>
+          </li>
+        </ul>
+      </div>
       <div>
-        <div className="w-full">
+        <div className="w-full mb-32">
           <input
             type="text"
             name="name"
